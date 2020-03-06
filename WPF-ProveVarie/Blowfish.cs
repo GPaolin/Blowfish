@@ -213,14 +213,14 @@ namespace WPF_ProveVarie
         public UInt64[] EnCryptString(string inputstring)
         {
             char[] c_rawdata = inputstring.ToCharArray();
-            int dimensionP = (c_rawdata.Length / 4) + 1;
+            int dimensionP = (c_rawdata.Length / 4);
             int rest = c_rawdata.Length % 4;
 
             UInt64[] P = new UInt64[dimensionP];
             UInt32[] L = new UInt32[dimensionP];
             UInt32[] R = new UInt32[dimensionP];
 
-            for (int i = 0, j = -1; i < dimensionP - 1; i++)
+            for (int i = 0, j = -1; i < dimensionP; i++)
             {
                 UInt16 LH, LL, RH, RL;
                 LH = (UInt16)c_rawdata[++j];
@@ -235,7 +235,7 @@ namespace WPF_ProveVarie
             for (int i = 0; i < P.Length; i++)
             {
                 encrypt(ref L[i], ref R[i]);
-                P[i] = (UInt64)(L[i] << 0x20) + (UInt64)R[i];
+                P[i] = ((UInt64)L[i] << 0x20) + (UInt64)R[i];
             }
 
             return P;
@@ -250,22 +250,22 @@ namespace WPF_ProveVarie
 
             for (int i = 0; i < dimensionC; i++)
             {
-                L[i] = (UInt32)(C[i] >> 0x20);
                 R[i] = (UInt32)(C[i] & 0xffffffff);
+                L[i] = (UInt32)(C[i] >> 0x20);
 
                 decrypt(ref L[i], ref R[i]);
             }
 
 
-            for (int i = 0, j = -1; i < dimensionC - 1; i++)
+            for (int i = 0, j = -1; i < dimensionC; i++)
             {
                 UInt16 LH, LL, RH, RL;
-                LH = (UInt16)L[i >> 0x10];
-                LL = (UInt16)L[i & 0xffff];
-                RH = (UInt16)R[i >> 0x10];
-                RL = (UInt16)R[i & 0xffff];
+                LL = (UInt16)(L[i] & 0xffff);
+                LH = (UInt16)(L[i] >> 0x10);
+                RL = (UInt16)(R[i] & 0xffff);
+                RH = (UInt16)(R[i] >> 0x10);
 
-                P += (char)LH + (char)LL + (char)RH + (char)RL;
+                P += ((char)LH).ToString() + ((char)LL).ToString() + ((char)RH).ToString() + ((char)RL).ToString();
             }
 
             return P;
