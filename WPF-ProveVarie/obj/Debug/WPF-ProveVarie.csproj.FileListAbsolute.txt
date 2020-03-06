@@ -1,0 +1,15 @@
+C:\Users\paoling\source\repos\WPF-ProveVarie\WPF-ProveVarie\bin\Debug\WPF-ProveVarie.exe.config
+C:\Users\paoling\source\repos\WPF-ProveVarie\WPF-ProveVarie\bin\Debug\WPF-ProveVarie.exe
+C:\Users\paoling\source\repos\WPF-ProveVarie\WPF-ProveVarie\bin\Debug\WPF-ProveVarie.pdb
+C:\Users\paoling\source\repos\WPF-ProveVarie\WPF-ProveVarie\obj\Debug\WPF-ProveVarie.csprojAssemblyReference.cache
+C:\Users\paoling\source\repos\WPF-ProveVarie\WPF-ProveVarie\obj\Debug\MainWindow.g.cs
+C:\Users\paoling\source\repos\WPF-ProveVarie\WPF-ProveVarie\obj\Debug\App.g.cs
+C:\Users\paoling\source\repos\WPF-ProveVarie\WPF-ProveVarie\obj\Debug\WPF-ProveVarie_MarkupCompile.cache
+C:\Users\paoling\source\repos\WPF-ProveVarie\WPF-ProveVarie\obj\Debug\WPF-ProveVarie_MarkupCompile.lref
+C:\Users\paoling\source\repos\WPF-ProveVarie\WPF-ProveVarie\obj\Debug\MainWindow.baml
+C:\Users\paoling\source\repos\WPF-ProveVarie\WPF-ProveVarie\obj\Debug\WPF-ProveVarie.g.resources
+C:\Users\paoling\source\repos\WPF-ProveVarie\WPF-ProveVarie\obj\Debug\WPF_ProveVarie.Properties.Resources.resources
+C:\Users\paoling\source\repos\WPF-ProveVarie\WPF-ProveVarie\obj\Debug\WPF-ProveVarie.csproj.GenerateResource.cache
+C:\Users\paoling\source\repos\WPF-ProveVarie\WPF-ProveVarie\obj\Debug\WPF-ProveVarie.csproj.CoreCompileInputs.cache
+C:\Users\paoling\source\repos\WPF-ProveVarie\WPF-ProveVarie\obj\Debug\WPF-ProveVarie.exe
+C:\Users\paoling\source\repos\WPF-ProveVarie\WPF-ProveVarie\obj\Debug\WPF-ProveVarie.pdb

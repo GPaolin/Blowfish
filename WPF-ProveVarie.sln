@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF-ProveVarie", "WPF-ProveVarie\WPF-ProveVarie.csproj", "{CFA008D4-2963-49E1-87FC-25F8E1DC3DEF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFA008D4-2963-49E1-87FC-25F8E1DC3DEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFA008D4-2963-49E1-87FC-25F8E1DC3DEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFA008D4-2963-49E1-87FC-25F8E1DC3DEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFA008D4-2963-49E1-87FC-25F8E1DC3DEF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B77A26C7-F6CC-4C19-9A2B-A1F62FFC7403}
+	EndGlobalSection
+EndGlobal
