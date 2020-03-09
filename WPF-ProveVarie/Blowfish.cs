@@ -213,14 +213,17 @@ namespace WPF_ProveVarie
         public UInt64[] EnCryptString(string inputstring)
         {
             char[] c_rawdata = inputstring.ToCharArray();
-            int dimensionP = (c_rawdata.Length / 4);
+            
+            int ratio = (c_rawdata.Length / 4);
             int rest = c_rawdata.Length % 4;
+            int dimensionP = (rest > 0) ? ratio + 1 : ratio;
 
             UInt64[] P = new UInt64[dimensionP];
             UInt32[] L = new UInt32[dimensionP];
             UInt32[] R = new UInt32[dimensionP];
 
-            for (int i = 0, j = -1; i < dimensionP; i++)
+            int stop = 0;
+            for (int i = 0, j = -1; i < ratio; i++)
             {
                 UInt16 LH, LL, RH, RL;
                 LH = (UInt16)c_rawdata[++j];
@@ -230,13 +233,29 @@ namespace WPF_ProveVarie
 
                 L[i] = (UInt32)(LH << 0x10) + (UInt32)LL;
                 R[i] = (UInt32)(RH << 0x10) + (UInt32)RL;
+
+                stop = j;
             }
-            
-            for (int i = 0; i < P.Length; i++)
+
+            UInt64[] cc = new UInt64[rest];
+            UInt64 LAST = 0;
+            for (int i = 0; i < rest; i++)
+            {
+                cc[i] = (UInt64)c_rawdata[stop + i] << (0x10 * (rest - 1 - i));
+                LAST += cc[i];
+            }
+
+            for (int i = 0; i < ratio; i++)
             {
                 encrypt(ref L[i], ref R[i]);
                 P[i] = ((UInt64)L[i] << 0x20) + (UInt64)R[i];
             }
+            if (rest > 0)
+            {
+                P[dimensionP] = LAST;
+            }
+
+
 
             return P;
         }

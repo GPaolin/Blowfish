@@ -51,6 +51,12 @@ namespace WPF_ProveVarie
             {
                 UInt64[] crypted = new Blowfish(_key.ToCharArray()).EnCryptString(Input.Text);
 
+                foreach (UInt64 u64 in crypted)
+                {
+                    CodeInput.Text += u64.ToString(); 
+                }
+                
+
                 string decrypted = new Blowfish(_key.ToCharArray()).DeCryptRawData(crypted);
 
                 CodeOutput.Text = decrypted;
