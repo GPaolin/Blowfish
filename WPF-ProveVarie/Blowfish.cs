@@ -224,7 +224,6 @@ namespace WPF_ProveVarie
                 UInt32[] L = new UInt32[dimensionP];
                 UInt32[] R = new UInt32[dimensionP];
 
-                int stop = 0;
                 for (int i = 0, j = -1; i < ratio; i++)
                 {
                     UInt16 LH, LL, RH, RL;
@@ -235,15 +234,12 @@ namespace WPF_ProveVarie
 
                     L[i] = (UInt32)(LH << 0x10) + (UInt32)LL;
                     R[i] = (UInt32)(RH << 0x10) + (UInt32)RL;
-
-                    stop = j;
                 }
 
                 /*LAST PACKAGE OF DATA*/
                 if (rest > 0)
                 {
                     int indexOfLastPack = ratio * 4;
-                    UInt64 LAST = 0;
                     UInt32 LLAST = 0;
                     UInt32 RLAST = 0;
                     UInt16 LHLast, LLLast, RHLast, RLLast;
@@ -275,6 +271,17 @@ namespace WPF_ProveVarie
             }
             catch (Exception ex) { throw; }
         }
+
+        public UInt64[] EnCryptString(byte[] utf8Encoding)
+        {
+            try
+            {
+                string input = Encoding.UTF8.GetString(utf8Encoding);
+                return EnCryptString(input);
+            }
+            catch (Exception ex) { throw; }
+        }
+
 
         public string DeCryptRawData(UInt64[] C)
         {
@@ -313,6 +320,8 @@ namespace WPF_ProveVarie
             catch (Exception ex) { throw; }
         }
 
+
+        
         #endregion
     }
 

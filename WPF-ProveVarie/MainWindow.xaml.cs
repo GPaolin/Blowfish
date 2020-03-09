@@ -63,5 +63,30 @@ namespace WPF_ProveVarie
             }
             catch (Exception ex) { throw; }
         }
+
+        private void ButEncodeUTF8_Click(object sender, RoutedEventArgs e)
+        {
+            string input = Input.Text;
+            string output = "";
+
+            try
+            {
+                byte[] encodeBytes = Encoding.UTF8.GetBytes(input);
+
+                output += "Numero di bytes di encoding UTF-8: " + encodeBytes.Length + Environment.NewLine;
+                foreach (byte b in encodeBytes)
+                {
+                    //output += ((int)b).ToString() + Environment.NewLine;
+                    output += ((char)b).ToString();
+                }
+                
+                Output.Text = output;
+
+                Blowfish blowfish = new Blowfish(_key.ToCharArray());
+                CodeOutput.Text = blowfish.DeCryptRawData(blowfish.EnCryptString(encodeBytes));
+                
+            }
+            catch (Exception ex) { }
+        }
     }
 }
