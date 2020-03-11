@@ -53,15 +53,15 @@ namespace WPF_ProveVarie
 
                 foreach (UInt64 u64 in crypted)
                 {
-                    CodeInput.Text += u64.ToString(); 
+                    CodeInput.Text += u64.ToString();
                 }
-                
 
                 string decrypted = new Blowfish(_key.ToCharArray()).DeCryptRawData(crypted);
 
                 CodeOutput.Text = decrypted;
             }
             catch (Exception ex) { throw; }
+
         }
 
         private void ButEncodeUTF8_Click(object sender, RoutedEventArgs e)
